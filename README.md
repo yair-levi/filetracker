@@ -1,9 +1,9 @@
 File Tracker Background
 -------------
-This is a part of full solution to detects duplicat files in directory, 
-This micro-serves track file changes in directory and produce changes to changes queue 
+This is a part of a full solution to detect duplicate files in a directory,
+This micro-serves track file changes in the directory and produce changes to changes queue
 
-Here is description how we define change (is a part of docstring): 
+Here is a description of how we define change (is a part of docstring):
 
     snapshot is dictionary with file name as key and last modify timestamp as value,
     the function using last directory snapshot and current snapshot to track if there are any changes,
@@ -14,10 +14,11 @@ Here is description how we define change (is a part of docstring):
 
     # we're filtering out all the changes on files with "_DUP_#"
 
-I'm using pickle module for saving snapshot of directory, if application is failed or down, application take the last
-state from pickle file, pickle file name is md5 of the tracked directory.
-please note, when you start track a new directory all existing file will send to worker 
-and process of mapping duplicate file will start.
+I'm using the pickle module for saving a snapshot of the directory,
+if the application is failed or is down, the application takes the last
+state from the pickle file, the pickle file name is md5 of the tracked directory.
+please note, when you start tracking a new directory all existing files will send to the worker,
+and the process of mapping duplicate files will start.
 
 
 --------------
