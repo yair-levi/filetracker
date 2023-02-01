@@ -1,0 +1,9 @@
+rabitMQ:
+   host: localhost
+   port: 5672
+   queue_name: changes
+directory: C:\Users\Flolive\PycharmProjects\fileTracker\files
+
+
+
+
