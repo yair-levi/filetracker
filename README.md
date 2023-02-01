@@ -1,6 +1,11 @@
 File Tracker Background
 -------------
 This is a part of a full solution to detect duplicate files in a directory,
+
+
+https://user-images.githubusercontent.com/71433083/216137278-ab9d7ec7-f52e-4152-a8de-c28f337e670d.mp4
+
+
 This micro-serves track file changes in the directory and produce changes to changes queue
 
 Here is a description of how we define change (is a part of docstring):
