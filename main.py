@@ -24,8 +24,8 @@ if __name__ == '__main__':
     queue_name = configuration["rabitMQ"]["queue_name"]
     directory = configuration["directory"]
     producer = Producer(host=rabit_mq_host, port=rabit_mq_port,  queue_name=queue_name)
-    change_tracker = ChangeTracker(tracked_dir=directory, producer=producer)
-    change_tracker.start()
+    change_tracker = ChangeTracker(tracked_dir=directory)
+    change_tracker.start(producer=producer)
 
 
 

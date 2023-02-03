@@ -12,11 +12,10 @@ from pathlib import Path
 
 
 class ChangeTracker:
-    def __init__(self, tracked_dir: str, producer: Producer):
+    def __init__(self, tracked_dir: str):
         self.tracked_dir = tracked_dir
         self.tracked_dir_md5 = hashlib.md5(self.tracked_dir.encode('utf-8')).hexdigest()
         self.path = Path(self.tracked_dir_md5)
-        self.producer = producer
         self.last_snapshot: dict = self._start_app_snapshot()
 
     def _start_app_snapshot(self):
@@ -80,7 +79,7 @@ class ChangeTracker:
 
         return added, modified, removed
 
-    def start(self):
+    def start(self, producer: Producer):
         """
         here we start the main loop that tracking the changes every 1 sec,
         if there are any changes message will produce with all changes
@@ -97,4 +96,4 @@ class ChangeTracker:
             }
             logging.info(changes)
             print(changes)
-            self.producer.send(json.dumps(changes))
+            producer.send(json.dumps(changes))
